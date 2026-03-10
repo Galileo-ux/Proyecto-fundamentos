@@ -1,0 +1,126 @@
+#container svg {
+	animation: pulse 1.5s infinite;
+	vertical-align: middle;
+}
+
+@keyframes pulse {
+	0% { opacity: 1; transform: scale(1); }
+	50% { opacity: 0.7; transform: scale(1.08); }
+	100% { opacity: 1; transform: scale(1); }
+}
+
+.container {
+	position: relative;
+	overflow: hidden;
+}
+
+.container::before {
+	content: "";
+	position: absolute;
+	top: -40px;
+	left: -40px;
+	width: 120px;
+	height: 120px;
+	background: radial-gradient(circle, #e3f2fd 60%, transparent 100%);
+	z-index: 0;
+	opacity: 0.5;
+}
+
+.container::after {
+	content: "";
+	position: absolute;
+	bottom: -30px;
+	right: -30px;
+	width: 80px;
+	height: 80px;
+	background: radial-gradient(circle, #bbdefb 60%, transparent 100%);
+	z-index: 0;
+	opacity: 0.4;
+}
+
+.container > * {
+	position: relative;
+	z-index: 1;
+}
+
+#result {
+	margin-top: 20px;
+	min-height: 32px;
+	text-align: center;
+	font-size: 1.05rem;
+	background: #f1f8e9;
+	border-radius: 6px;
+	padding: 8px 0;
+	box-shadow: 0 1px 4px rgba(76,175,80,0.08);
+	transition: background 0.3s;
+}
+body {
+	background: #f4f6f8;
+	font-family: 'Segoe UI', Arial, sans-serif;
+	color: #222;
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	max-width: 400px;
+	margin: 50px auto;
+	padding: 24px;
+	background: #fff;
+	border-radius: 12px;
+	box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+	border: 1px solid #e0e0e0;
+}
+
+h2 {
+	text-align: center;
+	margin-bottom: 24px;
+	font-weight: 600;
+	color: #007bff;
+}
+
+form label {
+	font-size: 1rem;
+	margin-bottom: 8px;
+	display: block;
+	color: #333;
+}
+
+input[type="url"] {
+	width: 100%;
+	padding: 10px;
+	border-radius: 6px;
+	border: 1px solid #bdbdbd;
+	margin-bottom: 16px;
+	font-size: 1rem;
+	transition: border-color 0.2s;
+}
+
+input[type="url"]:focus {
+	border-color: #007bff;
+	outline: none;
+}
+
+button[type="submit"] {
+	width: 100%;
+	padding: 12px;
+	background: linear-gradient(90deg, #007bff 0%, #0056b3 100%);
+	color: #fff;
+	border: none;
+	border-radius: 6px;
+	font-size: 1rem;
+	font-weight: 500;
+	cursor: pointer;
+	transition: background 0.2s;
+}
+
+button[type="submit"]:hover {
+	background: linear-gradient(90deg, #0056b3 0%, #007bff 100%);
+}
+
+#result {
+	margin-top: 20px;
+	min-height: 32px;
+	text-align: center;
+	font-size: 1.05rem;
+}
